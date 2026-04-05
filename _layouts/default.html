@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      <nav>
+        <a href="{{ '/' | relative_url }}">首页</a>
+        <a href="{{ '/archive' | relative_url }}">归档</a>
+        <a href="{{ '/about' | relative_url }}">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>基于 <a href="https://hackernewsletter.com/" target="_blank">Hacker Newsletter</a> 翻译 &middot; <a href="https://github.com/flanker/hnweekly" target="_blank">GitHub</a> &middot; <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+    </div>
+  </footer>
+</body>
+</html>

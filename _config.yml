@@ -1,0 +1,30 @@
+title: HN Weekly 中文
+description: Hacker Newsletter 每周中文翻译
+url: "https://hnweekly.cn"
+baseurl: ""
+
+lang: zh-CN
+timezone: Asia/Shanghai
+
+permalink: pretty
+
+collections:
+  issues:
+    output: true
+    permalink: /issues/:path/
+
+defaults:
+  - scope:
+      path: "issues"
+    values:
+      layout: article
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

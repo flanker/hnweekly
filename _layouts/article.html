@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article class="article-detail">
+  <header>
+    <div class="article-meta">
+      <a href="{{ '/issues/' | append: page.issue | append: '/' | relative_url }}">&larr; #{{ page.issue }}</a>
+    </div>
+    <h1>{{ page.title }}</h1>
+    <div class="article-links">
+      {% if page.original_url %}<a href="{{ page.original_url }}" target="_blank">原文</a>{% endif %}
+      {% if page.hn_url %}<a href="{{ page.hn_url }}" target="_blank">HN 讨论</a>{% endif %}
+    </div>
+  </header>
+
+  {{ content }}
+
+  <nav class="article-nav">
+    {% assign issue_num = page.issue | append: "" %}
+    {% assign issue_path = "issues/" | append: issue_num | append: "/" %}
+    {% assign articles = site.pages | where_exp: "p", "p.path contains issue_path" | where_exp: "p", "p.layout == 'article'" | sort: "number" %}
+    {% for a in articles %}
+      {% if a.number == page.number %}
+        {% assign prev_num = page.number | minus: 1 %}
+        {% assign next_num = page.number | plus: 1 %}
+        {% for b in articles %}
+          {% if b.number == prev_num %}
+            <a href="{{ b.url | relative_url }}" class="nav-prev">&larr; {{ b.title }}</a>
+          {% endif %}
+          {% if b.number == next_num %}
+            <a href="{{ b.url | relative_url }}" class="nav-next">{{ b.title }} &rarr;</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+</article>
