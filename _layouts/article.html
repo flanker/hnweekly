@@ -9,8 +9,8 @@ layout: default
     </div>
     <h1>{{ page.title }}</h1>
     <div class="article-links">
-      {% if page.original_url %}<a href="{{ page.original_url }}" target="_blank">原文</a>{% endif %}
-      {% if page.hn_url %}<a href="{{ page.hn_url }}" target="_blank">HN 讨论</a>{% endif %}
+      {% if page.original_url and page.original_url != "" %}<a href="{{ page.original_url }}" target="_blank" rel="noopener" class="article-link-primary">查看原文</a>{% endif %}
+      {% if page.hn_url and page.hn_url != "" %}<a href="{{ page.hn_url }}" target="_blank" rel="noopener" class="article-link-secondary">HN 讨论</a>{% endif %}
     </div>
   </header>
 

@@ -108,16 +108,47 @@ li { margin-bottom: 0.3rem; }
 .article-meta a { color: #999; font-size: 0.85rem; }
 
 .article-links {
-  margin: 0.5rem 0 1.5rem;
-  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.75rem 0 1.75rem;
+  font-size: 0.95rem;
 }
 .article-links a {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  background: #f0f0f0;
-  border-radius: 3px;
-  margin-right: 0.5rem;
-  color: #555;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+.article-links a::after {
+  content: "↗";
+  font-size: 0.95em;
+  font-weight: 500;
+}
+.article-links a:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.article-link-primary {
+  background: #ff6600;
+  color: #fff !important;
+  box-shadow: 0 1px 3px rgba(255, 102, 0, 0.25);
+}
+.article-link-primary:hover {
+  background: #e85d00;
+  box-shadow: 0 3px 8px rgba(255, 102, 0, 0.35);
+}
+.article-link-secondary {
+  background: #fff;
+  color: #ff6600 !important;
+  border: 1px solid #ff6600;
+}
+.article-link-secondary:hover {
+  background: #fff5ee;
 }
 
 .article-nav {
@@ -150,4 +181,10 @@ li { margin-bottom: 0.3rem; }
   h1 { font-size: 1.3rem; }
   .site-header .container { flex-direction: column; gap: 0.5rem; }
   .site-header nav a { margin-left: 1rem; }
+  .article-links a {
+    flex: 1;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
 }
