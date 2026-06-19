@@ -2,7 +2,7 @@
 layout: article
 title: "保罗·格雷厄姆：如何赚到十亿美元"
 issue: 798
-number: 04
+number: 4
 category: favorites
 original_url: "https://paulgraham.com/earn.html"
 hn_url: "https://news.ycombinator.com/item?id=48526360"

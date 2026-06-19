@@ -2,7 +2,7 @@
 layout: article
 title: "为一个人而写"
 issue: 798
-number: 08
+number: 8
 category: favorites
 original_url: "https://wizardzines.com/comics/write-for-one-person/"
 hn_url: "https://news.ycombinator.com/item?id=48507039"

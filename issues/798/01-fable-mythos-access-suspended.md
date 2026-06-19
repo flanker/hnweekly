@@ -2,7 +2,7 @@
 layout: article
 title: "美国政府勒令 Anthropic 暂停 Fable 5 与 Mythos 5 访问"
 issue: 798
-number: 01
+number: 1
 category: favorites
 original_url: "https://www.anthropic.com/news/fable-mythos-access"
 hn_url: "https://news.ycombinator.com/item?id=48511072"

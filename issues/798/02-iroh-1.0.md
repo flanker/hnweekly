@@ -2,7 +2,7 @@
 layout: article
 title: "Iroh 1.0 发布：用密钥而非 IP 拨号的点对点网络"
 issue: 798
-number: 02
+number: 2
 category: favorites
 original_url: "https://www.iroh.computer/blog/v1"
 hn_url: "https://news.ycombinator.com/item?id=48542480"

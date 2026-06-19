@@ -2,7 +2,7 @@
 layout: article
 title: "《卡尔文与跳跳虎》与坚守原则的代价"
 issue: 798
-number: 05
+number: 5
 category: favorites
 original_url: "https://therepublicofletters.substack.com/p/calvin-and-hobbes-and-the-price-of"
 hn_url: "https://news.ycombinator.com/item?id=48557079"

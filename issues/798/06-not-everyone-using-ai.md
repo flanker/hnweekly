@@ -2,7 +2,7 @@
 layout: article
 title: "并非人人都在用 AI 做一切"
 issue: 798
-number: 06
+number: 6
 category: favorites
 original_url: "https://gabrielweinberg.com/p/people-are-consuming-ai-like-they"
 hn_url: "https://news.ycombinator.com/item?id=48527700"

@@ -2,7 +2,7 @@
 layout: article
 title: "面试经历教会我的 Kubernetes 之道"
 issue: 798
-number: 09
+number: 9
 category: favorites
 original_url: "https://notnotp.com/notes/what-job-interviews-taught-me-about-kubernetes/"
 hn_url: "https://news.ycombinator.com/item?id=48546428"

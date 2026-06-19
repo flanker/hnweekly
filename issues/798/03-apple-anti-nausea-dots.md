@@ -2,7 +2,7 @@
 layout: article
 title: "苹果那些“防晕车小点点”治好了我的晕车"
 issue: 798
-number: 03
+number: 3
 category: favorites
 original_url: "https://www.theverge.com/tech/942854/apple-vehicle-motion-cues-review-really-work"
 hn_url: "https://news.ycombinator.com/item?id=48557530"

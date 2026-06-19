@@ -2,7 +2,7 @@
 layout: article
 title: "我爱电脑"
 issue: 798
-number: 07
+number: 7
 category: favorites
 original_url: "https://michaelenger.com/blog/i-love-the-computer/"
 hn_url: "https://news.ycombinator.com/item?id=48546441"
