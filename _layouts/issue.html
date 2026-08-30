@@ -19,8 +19,8 @@ layout: default
   {% assign issue_path = "issues/" | append: issue_num | append: "/" %}
   {% assign articles = site.pages | where_exp: "p", "p.path contains issue_path" | where_exp: "p", "p.layout == 'article'" | sort: "number" %}
 
-  {% assign categories = "favorites,ask_hn,show_hn,code,data,design,books,working,learn,watching,startup_news,fun" | split: "," %}
-  {% assign category_names = "精选,Ask HN,Show HN,代码,数据,设计,书籍,职场,学习,视频,创业新闻,趣味" | split: "," %}
+  {% assign categories = "favorites,featured,ask_hn,show_hn,code,data,design,books,working,learn,watching,startup_news,fun" | split: "," %}
+  {% assign category_names = "精选,特别关注,Ask HN,Show HN,代码,数据,设计,书籍,职场,学习,视频,创业新闻,趣味" | split: "," %}
 
   {% for cat in categories %}
     {% assign cat_articles = articles | where: "category", cat %}
