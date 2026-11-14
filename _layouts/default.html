@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   {% seo %}
@@ -12,11 +20,24 @@
   <header class="site-header">
     <div class="container">
       <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-      <nav>
-        <a href="{{ '/' | relative_url }}">首页</a>
-        <a href="{{ '/archive' | relative_url }}">归档</a>
-        <a href="{{ '/about' | relative_url }}">关于</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a href="{{ '/' | relative_url }}">首页</a>
+          <a href="{{ '/archive' | relative_url }}">归档</a>
+          <a href="{{ '/about' | relative_url }}">关于</a>
+        </nav>
+        <div class="theme-switch" role="group" aria-label="主题">
+          <button type="button" data-theme-value="light" title="浅色" aria-label="浅色">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </button>
+          <button type="button" data-theme-value="dark" title="深色" aria-label="深色">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button type="button" data-theme-value="auto" title="跟随系统" aria-label="跟随系统">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -29,5 +50,39 @@
       <p>基于 <a href="https://hackernewsletter.com/" target="_blank">Hacker Newsletter</a> 翻译 &middot; <a href="https://github.com/flanker/hnweekly" target="_blank">GitHub</a> &middot; <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var buttons = document.querySelectorAll('.theme-switch button');
+
+      function apply(value) {
+        if (value === 'light' || value === 'dark') root.setAttribute('data-theme', value);
+        else root.removeAttribute('data-theme');
+        var current = root.getAttribute('data-theme') || 'auto';
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-theme-value') === current));
+        }
+      }
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var value = this.getAttribute('data-theme-value');
+          try {
+            if (value === 'auto') localStorage.removeItem('theme');
+            else localStorage.setItem('theme', value);
+          } catch (e) {}
+          apply(value);
+        });
+      }
+
+      // Keep other open tabs in sync
+      window.addEventListener('storage', function (e) {
+        if (e.key === 'theme') apply(e.newValue);
+      });
+
+      apply(root.getAttribute('data-theme'));
+    })();
+  </script>
 </body>
 </html>
